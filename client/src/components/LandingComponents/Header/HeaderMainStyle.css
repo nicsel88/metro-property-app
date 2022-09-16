@@ -1,0 +1,89 @@
+.NavBarMain{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    background: #8B8888;
+}
+
+.Logo-Main{
+    position: absolute;
+    float: left;
+    width: 215px;
+    height: 59px;
+    left: 30px;
+    top: 9px;
+}
+
+.TopNav{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    margin-left: 900px;
+}
+
+.Menu1{
+    display: flex;
+    margin-top: 19px;
+    height: 45px;
+    width: 80px;   
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+/* background-color: aqua; */
+
+}
+.Menu2{
+    display: flex;
+    margin-top: 19px;
+    margin-left: 35px;
+    height: 45px;
+    width: 80px;    
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+/* background-color: rgb(230, 0, 255); */
+}
+.Menu3, .Menu4,.Menu5,.Menu6{
+    display: flex;
+    margin-top: 19px;
+    margin-left: 35px;
+    height: 45px;
+    width: 80px;   
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+/* background-color: rgb(174, 255, 0); */
+}
+
+.Menu7{
+    display: flex;
+    margin-top: 19px;
+    margin-left: 35px;
+    height: 45px;
+    width: 80px;    
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+/* background-color: rgb(230, 0, 255); */
+
+}
