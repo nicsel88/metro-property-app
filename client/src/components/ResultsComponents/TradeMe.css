@@ -1,0 +1,159 @@
+
+.ListingsSearchContainer {
+    display: block;
+    font-size: 1rem;
+    line-height: 24px;
+    font-family: "Story Sans";
+    -webkit-text-size-adjust: 100%;
+
+}
+
+.ListingsSearchContainer:before {
+    box-sizing: border-box;
+}
+
+.ListingsSearchContainer:after {
+    box-sizing: border-box;
+}
+
+.ListingsSearchInner {
+    display: block;
+    font-size: 1rem;
+    line-height: 24px;
+    font-family: "Story Sans";
+    -webkit-text-size-adjust: 100%;
+
+}
+
+.ListingsSearchContent {
+    display: block;
+    font-size: 1rem;
+    line-height: 24px;
+    font-family: "Story Sans";
+    -webkit-text-size-adjust: 100%;
+
+}
+
+.SearchRow {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.SearchRowExtras {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding-left: 12px;
+    margin-top: -8px;
+}
+
+@media (min-width: 480px) {
+    .SearchRow {
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+}
+
+@media (min-width: 480px) {
+    .SearchRowExtras {
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+}
+
+.LocationSearch {
+    width: 75%;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+
+    padding-right: 0;
+}
+
+.SortButtonSection {
+    width: 25%;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: flex-end;
+    padding-left: 0;
+
+}
+
+.SortButton {
+    padding: 5.5px;
+    margin-bottom: 16px;
+    min-height: 38px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background-color: #007acd;
+    color: #fff;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    text-align: center;
+    transition-duration: .1s;
+    /* vertical-align: middle; */
+}
+
+.LocationGroupCompact {
+    display: block;
+}
+
+.LocationGroup {
+    display: flex;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+.RegionGroup {
+    min-width: 33.3333%;
+    flex: 1 1 100%;
+}
+
+.RegionDropdown {
+    position: relative;
+    display: block;
+}
+
+.DistrictGroup {
+    margin-top: 28px;
+    min-width: 33.3333%;
+    flex: 1 1 100%;
+}
+
+.DistrictDropdown {
+    position: relative;
+    display: block;
+}
+
+.DistrictWrapper {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    display: block;
+}
+
+.SuburbGroup {
+    position: relative;
+    min-height: 38px;
+    margin-top: 28px;
+    min-width: 33.3333%;
+    flex: 1 1 100%;
+}
+
+.SuburbWrapper {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    display: block;
+}
+
+.SuburbDropdown {
+    position: relative;
+    display: block;
+}

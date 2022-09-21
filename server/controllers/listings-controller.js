@@ -123,6 +123,10 @@ getListingById = async (req, res) => {
 }
 
 // GET (READ):
+// Add req.filter for example, to the Listing.find function to filter directly from the MongoDB.
+// See getListingsByID above.
+// Also req.sort for sorting functionality.
+
 
 getListings = async (req, res) => {
     await Listing.find({}, (err, listing) => {
@@ -138,10 +142,69 @@ getListings = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+// FILTER:
+
+getListingsByFilter = async (req, res) => {
+    const body = req.body
+
+    if (!body) {
+        return res.status(400).json({
+            success: false,
+            error: 'You must provide filter parameters in the request body',
+        })
+    }
+
+    if (req.body.rentMax == "Any") {
+        return rentMax = Infinity
+    }
+
+    if (req.body.bedroomsMax == "Any") {
+        return bedroomsMax = Infinity
+    }
+
+    if (req.body.bathroomsMax == "Any") {
+        return bathroomsMax = Infinity
+    }
+
+    if (req.body.carparksMax == "Any") {
+        return carparksMax = Infinity
+    }
+
+    await Listing.find({
+        $and: [
+            {rent: { $gte: req.body.rentMin, $lte: req.body.rentMax}},
+            {bedrooms: { $gte: req.body.bedroomsMin, $lte: req.body.bedroomsMax}},
+            {bathrooms: { $gte: req.body.bathroomsMin, $lte: req.body.bathroomsMax}},
+            {car_parks: { $gte: req.body.carparksMin, $lte: req.body.carparksMax}},
+            {region: { $in: req.body.location.region }},
+            {district: { $in: req.body.location.district }},
+            {city: { $in: req.body.location.city }},
+            {amentities: { $all: req.body.amenities }},
+            {property_type: { $in: req.body.propertyType }},
+            {pets_ok: { $eq: req.body.petsOk }}
+        ]   
+    
+    }, (err, listings) => {
+        if (err) {
+            return res.status(400).json({ success: false, error: err })
+        }
+
+        if (!listings.length) {
+            return res
+                .status(404)
+                .json({ success: false, error: `No listings found matching your search filters` })
+        }
+        // Could implement quick sort (or other sort) here before returning, but will do on the client instead.
+        return res.status(200).json({ success: true, data: listings })
+    }).catch(err => console.log(err))
+}
+
+
 module.exports = {
     createListing,
     updateListing,
     deleteListing,
     getListings,
     getListingById,
+    getListingsByFilter,
 }

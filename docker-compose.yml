@@ -1,0 +1,35 @@
+
+version: "3"
+services:
+  react-app:
+    image: react-app
+    stdin_open: true # keeps container alive and listening for requests after startup.
+    ports: 
+      - "8000:8000"
+    networks:
+      - mern-app
+  api-server:
+    image: api-server
+    ports:
+      - "3000:3000"
+    networks:
+      - mern-app
+    depends_on:
+      - mongo # ensures containers start in the correct order, since the express server needs to connect to the mongodb service.
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - mern-app
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  mern-app: # our name for the network
+    driver: bridge #uses default driver
+    
+# Define docker volume to enable persistence of database data across container re-starts.
+volumes:
+  mongo-data:
+    driver: local
