@@ -24,7 +24,7 @@ export const deleteListingById = id => api.delete(`/listing/${id}`)
 export const getListingById = id => api.get(`/listing/${id}`)
 export const getListingsByFilter = filterData => api.get(`/listing/filter`, filterData)
 
-
+// use these functions in front end pages.
 
 // export const getListingByFilterAndSort = filterAndSort => api.get(`listing/filter-sort`, filterAndSort)
 // 'filterAndSort' will be passed in as the request body.

@@ -1,161 +1,211 @@
-.ListingsSearchContent {
-    font-family: 'Inter';
-    font-style: normal;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 1.2rem;
-    padding: 1rem;
-    width: 75%;
-    margin: auto;
-}
-
-.FilterButton {
-    background-color: #868484;
-    color: white;
-    border-radius: 5px 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1rem;
-    height: 2rem;    
-}
-
-
-.FilterButton {
-    background-color: #868484;
-    color: white;
-    border-radius: 5px 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1rem;
-    height: 2rem;    
-}
-
-.SearchBarRow {
+.PropertyCardContainer {
     display: flex;
-    width: 100%;
+    flex-flow: row nowrap;
+    border-color: #D9D9D9;
     justify-content: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: auto;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    width: 75%;
 }
 
-.SearchBarRow input[type=text]:focus { /* removes the black outline border when clicking in search box  */
-    outline: none;
-    border: none;
+.ImageAddressContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 56%;
 }
 
-.SearchBarRow input[type=text] { /* targets the search input, text only */
-    border: transparent;
+.ListingImage {
+    width: 90%;
+    margin: auto;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+
+}
+
+.ListingImage img {
+    width: 100%;
+    border-radius: 20px;
+
+}
+
+.MapIconAddressContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    margin: auto;
+    height: 3.5rem;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
     text-align: center;
-    font-size: 1.2rem;
+    color: #FDFCFC;
+    background-color: #3A3B3B;
+    width: 88%;
+    border-radius: 10px;
+
 }
 
-.SearchBar {
-    width: 100%;
-    background: #D9D9D9;
-    border-radius: 5px;
-    border: none;    
+.MapIconAddressContainer img {
+    height: 70%;
+    margin: auto;
+    margin-right: 0.5rem;
 }
 
-::placeholder {
-    color: black;
+.MapIconAddressContainer p {
+    margin: auto;
+    margin-left: 0.5rem;
     font-size: 1rem;
-    margin-right: 1rem;
 
-  }
-
-.LocationRow {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    justify-content: space-between;
 }
 
-.RegionContainer {
-    display: flex;
-    flex-flow: column wrap;
-}
 
-.PropertyFiltersRow {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.ExtrasRow {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    justify-content: space-between;
+.InfoAndApplyContainer {
+    width: 44%;
     
 }
 
-.FilterCategoryContainer {
+.InfoAndApplyColoured {
     display: flex;
-    flex-flow: column wrap;
-    width: 25%;
-
+    flex-flow: column nowrap;
+    background-color: #3A3B3B;
+    width: 90%;
+    border-radius: 20px;
+    margin: auto;
+    height: 22.8rem;
 }
 
-.FilterMinMax {
+
+.PropertyInfoContainer {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
+
 }
 
-.FilterMinMaxLabel {
+.PropertyInfoContainer h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: left;
+    color: #FDFCFC;
+    margin-left: 2.5rem;
+    padding-top: 1.2rem;
+    padding-bottom: 0.6rem;
+}
+
+.PropertyInfoContainer h4 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 24px;
+    text-align: left;
+    color: #FFFFFF;
+    margin-left: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.PropertyInfoContainer h5 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 24px;
+    text-align: left;
+    color: #FFFFFF;
+    margin-left: 2.5rem;
+    margin-right: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.BedBathCarContainer {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 0.2rem;
+
+    
 }
 
-.CheckBoxContainer {
+.BedBathCarTile {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
+    color: white;
+    padding: none;
+    justify-content: flex-end;
+    align-items: center;
 
 }
 
-.CheckBoxAndLabel {
-    display: flex;
-    flex-flow: row wrap;
-
-}
-
-.ButtonContainer {
-    display: flex;
-    width: 15%;
-    align-items: flex-end;
-}
-
-.SavedSearchButton {
-    width: 100%;
-    height: 3.5rem;    
-}
-
-.CheckboxesContainer {
-    display: flex;
-    flex-flow: column wrap;
-
-}
-
-.FilterCategoryLabel {
+.BedBathCarTile p {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 1.3rem;
-    line-height: 29px;
+    line-height: 2.2rem;
     text-align: center;
-    color: #000000;
+    color: #FFFFFF;
+    margin-bottom: 0.2rem;
+}
+
+.BedBathCarTile img {
+    align-items: bottom;
+    padding: 0.2rem;
+    width: 70%;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+
 
 }
 
-.Multiselect {
-    background-color: #868484;
+.CarIcon {
+    width: 5rem;
+
+}
+
+.SaveEnquireApplyContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-top: 1rem;
+
+}
+
+.SaveEnquireApplyButton {
+
+    background-color: #3A3B3B;
     color: white;
-    border-radius: 5px 5px;
+    border: none;
+    border-radius: 10px 10px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 1rem;
-    height: 2rem;    
+    font-size: 1rem;  
+    width: 30%;
+    height: 3.5rem;    
 }
+
+.ApplyButton {
+
+    background-color: #2ECC71;
+    color: white;
+    border: none;
+    border-radius: 10px 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;  
+    width: 30%;
+    height: 3.5rem;    
+}
+
+
+

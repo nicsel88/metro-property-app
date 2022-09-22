@@ -176,9 +176,9 @@ getListingsByFilter = async (req, res) => {
             {bedrooms: { $gte: req.body.bedroomsMin, $lte: req.body.bedroomsMax}},
             {bathrooms: { $gte: req.body.bathroomsMin, $lte: req.body.bathroomsMax}},
             {car_parks: { $gte: req.body.carparksMin, $lte: req.body.carparksMax}},
-            {region: { $in: req.body.location.region }},
-            {district: { $in: req.body.location.district }},
-            {city: { $in: req.body.location.city }},
+            {region: { $in: req.body.region }},
+            {district: { $in: req.body.district }},
+            {suburb: { $in: req.body.suburb }},
             {amentities: { $all: req.body.amenities }},
             {property_type: { $in: req.body.propertyType }},
             {pets_ok: { $eq: req.body.petsOk }}

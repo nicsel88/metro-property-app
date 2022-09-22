@@ -1,7 +1,10 @@
 import React from 'react'
 import Multiselect from 'multiselect-react-dropdown'
 import styles from './SearchFilterSort.module.css'
-import {HiOutlineSearch} from 'react-icons/hi';
+import SearchIcon from '../../images/search-icon.png'
+import SaveSearchIcon from '../../images/save-search-icon.png'
+import SortIcon from '../../images/sort-icon.png'
+import ViewIcon from '../../images/view-icon.png'
 // import styles from './Driver.module.css'
 import { useState } from 'react'
 
@@ -84,7 +87,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
       <div className={styles.ListingsSearchContent}>
         <div className={styles.SearchBarRow}>          
               <input className={styles.SearchBar} type='text' placeholder='Enter address, city or keywords'></input> 
-              <button className={styles.SearchButton}><HiOutlineSearch className='icon' /></button>   
+              <button className={styles.SearchButton}><img src={SearchIcon} alt='search icon' /></button>   
         </div>
         <div className={styles.LocationRow}>
           <div className={styles.FilterCategoryContainer}>
@@ -92,7 +95,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
               <label className={styles.FilterCategoryLabel}>Select location</label>
             </div>
             <div>
-              <select className={styles.FilterButton}
+              <select className={styles.LocationFilterButton}
                 name="region"
                 placeholder="Region"
                 defaultValue={filter.region}
@@ -117,7 +120,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
               <label></label>
             </div>
             <div>
-              <select className={styles.FilterButton}
+              <select className={styles.LocationFilterButton}
                 name="district"
                 placeholder="District"
                 defaultValue={filter.district}
@@ -142,7 +145,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
               <label></label>
             </div>
             <div>
-              <select className={styles.FilterButton}
+              <select className={styles.LocationFilterButton}
                 name="suburb"
                 placeholder="Suburb"
                 defaultValue={filter.suburb}
@@ -163,7 +166,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
             </div>
           </div>
           <div className={styles.ButtonContainer}>
-            <button className={styles.SavedSearchButton}>Sort</button>
+            <button className={styles.SortButton}><img src={SortIcon} alt='save search icon' />  Sort By</button>
           </div>
         </div>
         <div className={styles.PropertyFiltersRow}>
@@ -258,7 +261,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
             </div>  
           </div>
           <div className={styles.ButtonContainer}>
-            <button className={styles.SavedSearchButton}>Save Search</button>
+            <button className={styles.SavedSearchButton}><img src={SaveSearchIcon} alt='save search icon' /> Save Search</button>
           </div>
         </div>
         <div className={styles.ExtrasRow}>
@@ -287,12 +290,18 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
                     color: "white"
                   },
                   multiselectContainer: {
-                    color: "#868484"
+                    color: "#868484",
+                    'margin-top': "0.5rem",
+                    'margin-left': "auto",
+                    'margin-right': "auto",
+                    width: '90%',
                   
                   },
                   searchBox: {
                     color: "#868484",
-                    'border-radius': '4px'
+                    'border-radius': '4px',
+                    height: '2rem',
+                    'padding-top': '0rem'
                   },
                   optionContainer: {
                     color: "white",
@@ -326,12 +335,18 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
                     color: "white"
                   },
                   multiselectContainer: {
-                    color: "#868484"
+                    color: "#868484",
+                    'margin-top': "0.5rem",
+                    'margin-left': "auto",
+                    'margin-right': "auto",
+                    width: '90%',
                   
                   },
                   searchBox: {
                     color: "#868484",
-                    'border-radius': '4px'
+                    'border-radius': '4px',
+                    height: '2rem',
+                    'padding-top': '0rem'
                   },
                   optionContainer: {
                     color: "white",
@@ -343,24 +358,28 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
           <div className={styles.FilterCategoryContainer}>
             <div className={styles.CheckboxesContainer}>
               <div className={styles.CheckBoxAndLabel}>
-                <input type="checkbox" name="petsOk" value="true" onChange={handleChange} />
+                <div className={styles.CheckBox}>
+                  <input type="checkbox" name="petsOk" value="true" onChange={handleChange} />
+                </div>
                 <label for="pets_ok">Pets OK</label>
               </div>
               <div className={styles.CheckBoxAndLabel}>
-                <input type="checkbox" name="availableNow" value="true" onChange={handleChange} />
+                <div className={styles.CheckBox}>
+                  <input type="checkbox" name="availableNow" value="true" onChange={handleChange} />
+                </div>
                 <label for="available_now">Available Now</label>
               </div>
             </div>
           </div>
           <div className={styles.ButtonContainer}>
-            <button className={styles.SavedSearchButton}>View Saved Searches</button>
+            <button className={styles.ViewSavedSearchButton}>
+              <img src={ViewIcon} alt='save search icon' />
+              <p>View Saved Searches</p>
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div>***</div>
-    <p>{JSON.stringify(filter)}</p>
-
   </>
     
 
