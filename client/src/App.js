@@ -16,7 +16,7 @@ import apis from './api/index.js'
 import axios from 'axios'
 
 
-// import Landing from './pages/Landing/Landing.jsx';
+import LandingPage from './pages/Landing/LandingPage.jsx';
 // import Enquire from './pages/Enquire/Enquire.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -80,7 +80,7 @@ function App() {
             <AuthProvider>
               {/* <NavBar/> */}
               <Routes>
-                        <Route exact path="/" element={<><Home /></>}/>
+                        <Route exact path="/" element={<><LandingPage /></>}/>
                         <Route exact path="/signup" element={<><HeaderMain /><SignUp /></>} />
                         <Route exact path="/login" element={<><HeaderMain /><Login /></>} />
                         <Route exact path="/apply" element={<><HeaderMain /><Apply /></>} />
