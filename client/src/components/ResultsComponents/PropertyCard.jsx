@@ -11,17 +11,18 @@ import ListingImages from '../../api/index'
 
 /* <p>{JSON.stringify(Listing)}</p> */
 
+// Path takes us up one level to public, then into public images folder
+// React requires 'import' command for all assets, EXCEPT those in public folder.
+
 const PropertyCard = ({ Listing }) => {
 
-const compressAddress = (Listing.street_address).replace(/[^\w\s\']|_/g, "").replace(/\s+/g, " ")
-
-console.log(compressAddress);
+var propertyImage = '../images/listing-' + Listing.street_address + '.jpg';
   
   return (
   <>
   <div className={styles.PropertyCardContainer}>
     <div className={styles.ImageAddressContainer}>
-      <div className={styles.ListingImage}><img src={ListingImages.A4122MunroeLane} alt='property image' /></div>
+      <div className={styles.ListingImage}><img src={propertyImage} alt={propertyImage} /></div>
       <div className={styles.MapIconAddressContainer}>
         <img src={MapIcon} alt='map icon' />
         <p>{Listing.street_address}, {Listing.suburb}</p>

@@ -10,7 +10,7 @@ import { useState } from 'react'
 
 
 const SearchFilterSort = ({ filter, setFilter, handleChange, handleSearch, handleSort, Listing }) => {
-
+  console.log(filter);
     // Create nested array with districts, suburbs for Auckland and Chch:
     const regions = [ {name: "All of New Zealand"}, {name: "Northland"},
     { 
@@ -89,7 +89,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange, handleSearch, handl
       <h4 className={styles.ProgressBar}>Home > Listings > {filter.region} > {filter.district} > {filter.suburb} </h4>
       <div className={styles.ListingsSearchContent}>
         <div className={styles.SearchBarRow}>          
-              <input className={styles.SearchBar} type='text' placeholder='Enter address, city or keywords'></input> 
+              <input className={styles.SearchBar} onChange={handleChange} name="keyword" type='text' placeholder='Enter address, city or keywords'></input> 
               <button className={styles.SearchButton} onClick={handleSearch}><img src={SearchIcon} alt='search icon' /></button>   
         </div>
         <div className={styles.LocationRow}>

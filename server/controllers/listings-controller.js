@@ -2,6 +2,27 @@ const Listing = require('../models/listings-model')
 
 // //CRUD operations:
 
+// GET (READ):
+// Add req.filter for example, to the Listing.find function to filter directly from the MongoDB.
+// See getListingsByID above.
+// Also req.sort for sorting functionality.
+
+//SEARCH FUNCTION:
+// getListingsbyLocation = async (req, res) => {
+//     await Listing.find({}, (err, listing) => {
+//         if (err) {
+//             return res.status(400).json({ success: false, error: err })
+//         }
+//         if (!listing.length) {
+//             return res
+//                 .status(404)
+//                 .json({ success: false, error: `Listing not found` })
+//         }
+//         return res.status(200).json({ success: true, data: listing })
+//     }).catch(err => console.log(err))
+// }
+
+
 // FILTER:
 
 getListingsByFilter = async (req, res) => {
@@ -74,7 +95,8 @@ getListingsByFilter = async (req, res) => {
             {suburb: {$regex: req.body.suburb}},
             // {amenities: { $all: req.body.amenities }},
             {property_type: { $in: req.body.propertyType }},
-            {pets_ok: { $eq: req.body.petsOk }}
+            {pets_ok: { $eq: req.body.petsOk }},
+            {suburb: { $regex: req.body.keyword}},
         ]   
     
     }, (err, listings) => {

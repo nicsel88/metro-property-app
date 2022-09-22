@@ -37,8 +37,11 @@ function App() {
     setListings(response.data.data)})
 
     const [filter, setFilter] = useState({
-        rentMin: "Any", rentMax: "Any", bedroomsMin: "Any", bedroomsMax: "Any", bathroomsMin: "Any", bathroomsMax: "Any", carparksMin: "Any", carparksMax: "Any", region: "", district: "", suburb: "", amenities: [], propertyType: [], petsOk: false, availableNow: false
+        keyword: "", rentMin: "Any", rentMax: "Any", bedroomsMin: "Any", bedroomsMax: "Any", bathroomsMin: "Any", bathroomsMax: "Any", carparksMin: "Any", carparksMax: "Any", region: "", district: "", suburb: "", amenities: [], propertyType: [], petsOk: false, availableNow: false
       }) // Sets the default data values.
+
+    //SEARCH FUNCTION:
+    //   const getListingById = location => api.get(`/listing/${location}`)
 
     //   const [filter, setFilter] = useState({
     //     rentMin: 0, rentMax: Infinity, bedroomsMin: 0, bedroomsMax: Infinity, bathroomsMin: 0, bathroomsMax: Infinity, carparksMin: 0, carparksMax: Infinity, location: {region: "", district: "", city: ""}, amenities: [], propertyType: [], petsOk: true,
