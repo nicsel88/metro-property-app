@@ -1,10 +1,10 @@
 import React from 'react'
 import './FooterStyle.css'
 import Line from './Line.jpg';
-import Facebook from './Facebook.jpg';
-import Twitter from './Twitter.jpg';
-import LinkedIn from './LinkedIn.jpg';
-import Instagram from './Insta.jpg';
+import Facebook from './Facebook.png';
+import Twitter from './Twitter.png';
+import LinkedIn from './LinkedIn.png';
+import Instagram from './Insta.png';
 
 function FooterMain() {
   return (
