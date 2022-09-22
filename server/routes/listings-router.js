@@ -9,5 +9,8 @@ router.put('/listing/:id', ListingController.updateListing)
 router.delete('/listing/:id', ListingController.deleteListing)
 router.get('/listing/:id', ListingController.getListingById)
 router.get('/listings', ListingController.getListings)
+router.get('listing/filter-result', )
+
+// Colon is used for a variable (in this case, 'id')
 
 module.exports = router

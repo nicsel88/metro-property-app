@@ -1,14 +1,46 @@
 import axios from 'axios'
+import React from 'react'
+import { useState } from 'react'
+
+// const Quote = ({ setQuoteData }) => {
+//     const [step, setStep] = useState(1)
+//     const [data, setData] = useState({
+//       make: "", model: "", year: null, enginecap: 2788, business: true, address: "", startdate: "",
+//       d1firstname: "", d1lastname: "", d1gender: "female", d1birthday: "YYYY-MM-DD", d1incidents: true, d1licence: "", d1policyhold: '', email: "", phone: "",
+//       plan: 2, excess: 500, value: 9000, extras: [true, false, true],
+//     })
+// }
 
 const api = axios.create({
     baseURL: 'http://localhost:3000/api',
 })
 
+//Each of these map to a specific function on the server:
 export const insertListing = payload => api.post(`/listing`, payload)
+// Normally 'payload' structure would be defined somewhere, like we did for the cars QuoteData.
 export const getAllListings = () => api.get(`/listings`)
 export const updateListingById = (id, payload) => api.put(`/listing/${id}`, payload)
 export const deleteListingById = id => api.delete(`/listing/${id}`)
 export const getListingById = id => api.get(`/listing/${id}`)
+export const getListingsByFilter = filterData => api.get(`/listing/filter`, filterData)
+
+// use these functions in front end pages.
+
+// export const getListingByFilterAndSort = filterAndSort => api.get(`listing/filter-sort`, filterAndSort)
+// 'filterAndSort' will be passed in as the request body.
+// It will contain the filter and sort fields set by the user.
+// Then retrieve on backend with req.body.__
+// The 'API endpoint' is `listing/filter-sort`
+// The 'client endpoint' what the user sees in their web browser.
+
+// Could instead use the options below to implement sort functionality separate to filter:
+
+// export const getListingByFilterAndSort = params [suburb, bedrooms] => api.get(`listing/${suburb}-${bedrooms}`, payload)
+// export const getListingByFilterAndSort = payload => api.get(`listing/${filterParams}`, payload)
+
+// A json can contain a Header, Body, Parameters (params) etc.
+// id is a param in this example and is called in the listings-controller using 'req.param.id'
+// If you 
 
 const apis = {
     insertListing,
@@ -16,6 +48,7 @@ const apis = {
     updateListingById,
     deleteListingById,
     getListingById,
+    getListingsByFilter,
 }
 
 export default apis

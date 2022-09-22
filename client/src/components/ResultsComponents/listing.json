@@ -1,0 +1,21 @@
+propertyType = ["All", "House", "Townhouse", "Apartment", "Unit"];
+amenities = ["School", "Supermarket", "Public transport", "Park", "Cafe/restaurant", "Shopping centre", "Gym"];
+
+{
+    "title": "Low maintenance, central-city apartment",
+    "street_address": "41/280 Bealey Avenue",
+    "suburb": "City Centre",
+    "district": "Christchurch",
+    "region": "Canterbury",
+    "rent": 460,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "car_parks" : 1,
+    "property_type": "Apartment",
+    "date_available": "11/10/2022",
+    "amenities": ["School", "Supermarket", "Public transport", "Park", "Cafe/restaurant", "Shopping centre", "Gym"],
+    "pets_ok": false,
+    "sharehouse": false
+}
+
+// Also, download an image of the property and name the file "listing-41/280-Bealey-Avenue.png"

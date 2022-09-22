@@ -21,6 +21,7 @@ useEffect(() => {
     //const body = await response.json();
     //const contacts = body.results;
     const listings = response.data.data;
+    // SORT HERE (On the client)
     console.log(listings);
     setData(listings);
   };

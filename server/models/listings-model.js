@@ -4,12 +4,10 @@ const Schema = mongoose.Schema
 const Listing = new Schema(
     {
         title: { type: String },
-        address: {
-            street: { type: String },
-            suburb: { type: String },
-            city: { type: String },
-            region: { type: String }
-        },
+        street_address: { type: String },
+        suburb: { type: String },
+        district: { type: String },
+        region: { type: String },
         rent: { type: Number },
         bedrooms: { type: Number },
         bathrooms: { type: Number },
