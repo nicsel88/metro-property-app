@@ -114,6 +114,14 @@
 
 }
 
+.LocationFilterCategoryContainer {
+    display: flex;
+    flex-flow: column wrap;
+    width: 25%;
+    justify-content: flex-end;
+    margin-left: 1.1rem;
+}
+
 .FilterMinMax {
     display: flex;
     flex-flow: row wrap;
@@ -173,6 +181,18 @@
     line-height: 29px;
     text-align: center;
     color: #000000;
+
+}
+
+.LocationFilterCategoryLabel {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    margin-left: 5.4rem;
 
 }
 
@@ -245,4 +265,15 @@
 .SearchButton img {
     width: 45%;
    
+}
+
+.ProgressBar {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #716C6C;
+    padding-top: 2rem;
+    padding-left: 2rem;
+
 }

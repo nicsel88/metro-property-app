@@ -1,0 +1,17 @@
+.h2 {
+  color: #3A3B3B;
+  font-family: 'Inter';
+  font-style: normal;
+  text-align: center;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} 
+
+.footer {
+  bottom: 0;
+}

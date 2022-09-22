@@ -15,7 +15,7 @@ function HeaderMain() {
             <a href="#Owners" className='Menu2'>Owners</a>
             <a href="#Tenants" className='Menu3'>Tenants</a>
             <a href="#News" className='Menu4'>News</a>
-            <a href="#AboutUs" className='Menu5'>About Us</a>
+            <a href="#AboutUs" className='Menu5'>About</a>
             <a href="#Contact" className='Menu6'>Contact</a>
             <a href="#LogIn" className='Menu7'>Log In</a>
         </div>
