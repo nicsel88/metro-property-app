@@ -1,0 +1,11 @@
+.Brand-Sec{
+    display: flex;
+    flex-direction: row;
+}
+.Brand-Image1,.Brand-Image2,.Brand-Image3,.Brand-Image4{
+    margin-left: 140px;
+    width: 200px;
+    height: 200px;
+    left: 185px;
+    top: 3700px;
+}
