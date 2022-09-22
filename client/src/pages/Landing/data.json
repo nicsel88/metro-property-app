@@ -1,0 +1,237 @@
+[
+    {
+
+        "title": "Takanini, 4 bedrooms",
+        "street_address": "52 Black Beech Crescent",
+        "suburb": "Takanini, Papakura",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 740,
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "car_parks" : 1,
+        "property_type": "House",
+        "date_available": "17/10/2022",
+        "amenities": ["School", "Supermarket", "Public transport", "Park", "Cafe/restaurant", "Shopping centre", "Gym"],
+        "pets_ok": false,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "New Lynn, 4 bedrooms",
+        "street_address": "141 Portage Road",
+        "suburb": "New Lynn",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 700,
+        "bedrooms": 4,
+        "bathrooms": 1,
+        "car_parks" : 2,
+        "property_type": "House",
+        "date_available": "01/11/2022",
+        "amenities": ["School", "Supermarket", "Public transport"],
+        "pets_ok": false,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Greenlane, 3 bedrooms",
+        "street_address": "54 Te Kawa Road",
+        "suburb": "Greenlane",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 750,
+        "bedrooms": 3,
+        "bathrooms": 1,
+        "car_parks" : 1,
+        "property_type": "House",
+        "date_available": "30/09/2022",
+        "amenities": ["School", "Supermarket", "Public transport","Gym"],
+        "pets_ok": true,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Albany, 2 bedrooms",
+        "street_address": "A412-2 Munroe Lane",
+        "suburb": "Albany",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 600,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "car_parks" : 1,
+        "property_type": "Apartment",
+        "date_available": "15/09/2022",
+        "amenities": ["School", "Supermarket", "Public transport","Gym"],
+        "pets_ok": false,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Orewa, 3 bedrooms",
+        "street_address": "32 Waldorf Crescent",
+        "suburb": "Orewa",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 800,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "car_parks" : 2,
+        "property_type": "House",
+        "date_available": "1/10/2022",
+        "amenities": ["School", "Supermarket", "Public transport", "Park", "Cafe/restaurant", "Shopping centre", "Gym"],
+        "pets_ok": true,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Birkenhead, 4 bedrooms",
+        "street_address": "65 Pupuke Road,",
+        "suburb": "Birkenhead",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 800,
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "car_parks" : 2,
+        "property_type": "House",
+        "date_available": "12/10/2022",
+        "amenities": ["School", "Supermarket", "Public transport", "Park", "Cafe/restaurant", "Shopping centre", "Gym"],
+        "pets_ok": true,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Albany, 1 bedroom",
+    
+        "street_address": "159 Unsworth Drive",
+        "suburb": "Albany",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 385,
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "car_parks" : 1,
+        "property_type": "Apartment",
+        "date_available": "12/10/2022",
+        "amenities": ["School", "Supermarket", "Public transport", "Park", "Gym"],
+        "pets_ok": false,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "City Centre, 2 bedrooms",
+        "street_address": "513-85 Airedale Street",
+        "suburb": "Auckland City",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 400,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "car_parks" : 0,
+        "property_type": "Apartment",
+        "date_available": "30/09/2022",
+        "amenities": ["Public transport",  "Gym"],
+        "pets_ok": false,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Manurewa, 3 bedrooms",
+        "street_address": "5A Beeston Crescent",
+        "suburb": "Manurewa",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 610,
+        "bedrooms": 3,
+        "bathrooms": 1,
+        "car_parks" : 1,
+        "property_type": "House",
+        "date_available": "20/09/2022",
+        "amenities": ["Public transport", "Park","School"],
+        "pets_ok": false,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Takanini, 2 bedrooms",
+        "street_address": "12 Black Beech Crescent",
+        "suburb": "Takanini",
+        "district": "Auckland",
+        "region": "Auckland",
+        "rent": 490,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "car_parks" : 1,
+        "property_type": "House",
+        "date_available": "10/10/2022",
+        "amenities": ["Public transport", "Park","School"],
+        "pets_ok": false,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Mount Eden, 1 bedroom",
+        "street_address": "107-39 Sandringham Road",
+        "suburb": "Mount Eden",
+        "district": "Auckland City",
+        "region": "Auckland",
+        "rent": 490,
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "car_parks" : 1,
+        "property_type": "Apartment",
+        "date_available": "20/10/2022",
+        "amenities": ["Public transport", "Park","School","Supermarket"],
+        "pets_ok": false,
+        "sharehouse": false
+    
+    },
+    {
+    
+        "title": "Takanini, 3 bedrooms",
+        "street_address": "32 Zabeel Crescent",
+        "suburb": "Takanini",
+        "district": "Auckland ",
+        "region": "Auckland",
+        "rent": 630,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "car_parks" : 2,
+        "property_type": "Townhouse",
+        "date_available": "14/10/2022",
+        "amenities": ["Public transport", "Park","School","Supermarket"],
+        "pets_ok": false,
+        "sharehouse": true
+    
+    },
+    {
+    
+        "title": "Half Moon Bay, 4 bedrooms",
+        "street_address": "2-5 Colleen Norma Place",
+        "suburb": "Half Moon Bay",
+        "district": "Auckland ",
+        "region": "Auckland",
+        "rent": 730,
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "car_parks" : 1,
+        "property_type": "Unit",
+        "date_available": "03/09/2022",
+        "amenities": ["Public transport", "Park","School","Supermarket"],
+        "pets_ok": false,
+        "sharehouse": true
+    
+    }
+]
