@@ -9,8 +9,8 @@ import ViewIcon from '../../images/view-icon.png'
 import { useState } from 'react'
 
 
-const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
-
+const SearchFilterSort = ({ filter, setFilter, handleChange, handleSearch, handleSort, Listing }) => {
+  console.log(filter);
     // Create nested array with districts, suburbs for Auckland and Chch:
     const regions = [ {name: "All of New Zealand"}, {name: "Northland"},
     { 
@@ -38,6 +38,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
     const [selectedRegion, setSelectedRegion] = useState();
     const [selectedDistrict, setSelectedDistrict] = useState();
     const [selectedSuburb, setSelectedSuburb] = useState();
+
   
     const availableDistrict = regions.find((region) => region.name === selectedRegion);
     const availableSuburb = availableDistrict?.districts?.find(
@@ -83,16 +84,18 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
 
   return (
   <>
+
     <div className={styles.ListingsSearchContainer}>
+      <h4 className={styles.ProgressBar}>Home > Listings > {filter.region} > {filter.district} > {filter.suburb} </h4>
       <div className={styles.ListingsSearchContent}>
         <div className={styles.SearchBarRow}>          
-              <input className={styles.SearchBar} type='text' placeholder='Enter address, city or keywords'></input> 
-              <button className={styles.SearchButton}><img src={SearchIcon} alt='search icon' /></button>   
+              <input className={styles.SearchBar} onChange={handleChange} name="keyword" type='text' placeholder='Enter address, city or keywords'></input> 
+              <button className={styles.SearchButton} onClick={handleSearch}><img src={SearchIcon} alt='search icon' /></button>   
         </div>
         <div className={styles.LocationRow}>
-          <div className={styles.FilterCategoryContainer}>
+          <div className={styles.LocationFilterCategoryContainer}>
             <div>
-              <label className={styles.FilterCategoryLabel}>Select location</label>
+              <label className={styles.LocationFilterCategoryLabel}>Select location</label>
             </div>
             <div>
               <select className={styles.LocationFilterButton}
@@ -166,7 +169,7 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
             </div>
           </div>
           <div className={styles.ButtonContainer}>
-            <button className={styles.SortButton}><img src={SortIcon} alt='save search icon' />  Sort By</button>
+            <button className={styles.SortButton} onClick={handleSort}><img src={SortIcon} alt='sort icon' />  Sort By</button>
           </div>
         </div>
         <div className={styles.PropertyFiltersRow}>
@@ -219,10 +222,10 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
                   name="bedroomsMax"
                   defaultValue={filter.bedroomsMax}
                   onChange={handleChange}>
-                  {bedroomsMax.map((option, index) => {
+                  {bedroomsMax.map((value, index) => {
                         return (
-                        <option key={option} value={index} >
-                          {option}
+                        <option value={value} key={index} >
+                          {value}
                         </option>
                         );
                       })}
@@ -250,10 +253,10 @@ const SearchFilterSort = ({ filter, setFilter, handleChange }) => {
                   name="bathroomsMax"
                   defaultValue={filter.bathroomsMax}
                   onChange={handleChange}>
-                  {bathroomsMax.map((option, index) => {
+                  {bathroomsMax.map((value, index) => {
                         return (
-                        <option key={option} value={index} >
-                          {option}
+                        <option value={value} key={index} >
+                          {value}
                         </option>
                         );
                       })}
