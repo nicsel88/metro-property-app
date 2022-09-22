@@ -5,9 +5,11 @@ import { Navigate } from 'react-router-dom';
 import fb from '../SignUpComponents/fb.png';
 import gl from '../SignUpComponents/gmail.png'
 import yh from '../SignUpComponents/yahoo.png'
+import { useEffect } from 'react';
 
 const Login = () => {
-    const { currentUser, signIn, logOut, login } = UseAuth();
+    const { currentUser, signIn, logOut, login, googleSignIn } = UseAuth();
+    const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
 
@@ -18,6 +20,16 @@ const Login = () => {
             login(emailRef.current.value, passwordRef.current.value);
         } catch (e) {
             console.log(e);
+        }
+    }
+
+    function mediaLogin(media){
+        switch(media){
+            case 'google':
+                googleSignIn();
+                break;
+            default:
+                return;
         }
     }
 
@@ -40,9 +52,9 @@ const Login = () => {
                 </Title>
                 <SubTitle>Continue using social media</SubTitle>
                 <SocialMedias>
-                    <FBLogo>
+                    <FBLogo onClick={()=>{console.log("fb")}}>
                     </FBLogo>
-                    <GmailLogo></GmailLogo>
+                    <GmailLogo onClick={()=>{mediaLogin('google')}} ></GmailLogo>
                     <YahooLogo></YahooLogo>
                 </SocialMedias>
                 <OR>
@@ -87,6 +99,7 @@ const LoginBanner = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     *{
         max-width: 70%;
         text-align: center;
@@ -95,6 +108,7 @@ const LoginBanner = styled.div`
     h3{
         color: #D8D8D8;
         font-weight: 400;
+        
     }
 
     button{
@@ -118,6 +132,7 @@ const LoginForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 `;
 
 const Title = styled.h1`
@@ -126,7 +141,7 @@ const Title = styled.h1`
 
 const SubTitle = styled.h2`
     color: gray;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 1.5em;
     margin-bottom: 1em;
 `;

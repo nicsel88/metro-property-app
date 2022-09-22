@@ -2,14 +2,14 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useRef } from 'react';
-import './Apply.css';
+import './Enquiry.css';
 import styled from 'styled-components';
 import { UseAuth } from '../../context/AuthContext';
 import { doc, collection, setDoc } from "firebase/firestore";
 import { db } from '../../firebase';
 import listings from './listings.png'
 
-function Apply() {
+function Enquire() {
   const dateRef = useRef();
   const typeRef = useRef();
   const yearRef = useRef();
@@ -72,7 +72,7 @@ function Apply() {
     <Blur></Blur>
     <Container>
       <ApplyForm onSubmit={(e)=>handleSubmit(e)}>
-        <Banner>Apply</Banner>
+        <Banner>Enquire</Banner>
         <Question>
           <Label>When can you take the property?<Red>*</Red></Label>
           <input ref={dateRef} type="date" name="" id="" required />
@@ -118,7 +118,7 @@ function Apply() {
           </div>
         </Question>
         <SaveListing>SaveListing</SaveListing>
-        <SubmitApplication>Apply</SubmitApplication>
+        <SubmitApplication>Enquire</SubmitApplication>
       </ApplyForm>
     </Container>
     </>
@@ -221,4 +221,4 @@ const SubmitApplication = styled.button`
 
 `;
 
-export default Apply;
+export default Enquire;

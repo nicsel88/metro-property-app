@@ -7,7 +7,7 @@ import gl from './gmail.png'
 import yh from './yahoo.png'
 
 const SignUp = () => {
-    const { currentUser, signIn } = UseAuth();
+    const { currentUser, signIn, logOut, login, googleSignIn } = UseAuth();
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -19,6 +19,16 @@ const SignUp = () => {
             signIn(emailRef.current.value, passwordRef.current.value);
         } catch (e) {
             console.log(e);
+        }
+    }
+
+    function mediaLogin(media){
+        switch(media){
+            case 'google':
+                googleSignIn();
+                break;
+            default:
+                return;
         }
     }
 
@@ -40,12 +50,12 @@ const SignUp = () => {
                     Create New Account
                 </Title>
                 <SubTitle>Create account using social media</SubTitle>
-                <SocialMedia>
-                    <FBLogo>
+                <SocialMedias>
+                    <FBLogo onClick={()=>{console.log("fb")}}>
                     </FBLogo>
-                    <GmailLogo></GmailLogo>
+                    <GmailLogo onClick={()=>{mediaLogin('google')}} ></GmailLogo>
                     <YahooLogo></YahooLogo>
-                </SocialMedia>
+                </SocialMedias>
                 <OR>
                     <span></span>
                     <p>or</p>
@@ -89,6 +99,7 @@ const LoginBanner = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     *{
         max-width: 70%;
@@ -121,6 +132,7 @@ const LoginForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 `;
 
 const Title = styled.h1`
@@ -130,12 +142,12 @@ const Title = styled.h1`
 const SubTitle = styled.h2`
 
     color: gray;
-    font-weight: 200;
+    font-weight: 00;
     font-size: 1.5em;
     margin-bottom: 1em;
 `;
 
-const SocialMedia = styled.div`
+const SocialMedias = styled.div`
     display: flex;
     justify-content: space-evenly;
     width: 50%;
