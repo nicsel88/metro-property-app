@@ -13,7 +13,9 @@ export default function Home () {
 
     return (
         <div>
+            {currentUser && console.log(currentUser)}
             {!currentUser && <Navigate to="/login"></Navigate>}
+            {currentUser && <h1>{currentUser.email}</h1>}
             <button onClick={() => { tologOut() }}>Logout</button>
         </div>
     )

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useState, useContext, useEffect } from "react";
-import { createUserWithEmailAndPassword, sendEmailVerification, signOut, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from "../firebase";
 
 
@@ -32,6 +32,13 @@ export function AuthProvider({ children }) {
 
     }
 
+    async function googleSignIn(){
+        const provider = new GoogleAuthProvider();
+        provider.addScope('profile');
+        provider.addScope('email');
+        const result = await signInWithPopup(auth, provider);
+    }
+
     function login(email, password){
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -61,6 +68,7 @@ export function AuthProvider({ children }) {
         signIn,
         logOut,
         login,
+        googleSignIn
     }
 
     return (

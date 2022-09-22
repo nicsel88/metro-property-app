@@ -10,6 +10,7 @@ import Home from './components/HomeComponents/Home'
 import Login from './components/SignInComponents/SignIn'
 import SignUp from './components/SignUpComponents/SignUp'
 import Apply from './components/ApplyComponents/Apply'
+import Enquire from './components/EnquiryComponents/Enquiry'
 import HeaderMain from './components/LandingComponents/Header/HeaderMain'
 import apis from './api/index.js'
 import axios from 'axios'
@@ -83,6 +84,7 @@ function App() {
                         <Route exact path="/signup" element={<><HeaderMain /><SignUp /></>} />
                         <Route exact path="/login" element={<><HeaderMain /><Login /></>} />
                         <Route exact path="/apply" element={<><HeaderMain /><Apply /></>} />
+                        <Route exact path="/enquire" element={<><HeaderMain /><Enquire /></>} />
                         <Route path='/listings' element={ <Results filter={filter} setFilter={setFilter} handleChange={handleChange} handleSearch={handleSearch} Listings={Listings}/> } />
               </Routes>
               </AuthProvider>
