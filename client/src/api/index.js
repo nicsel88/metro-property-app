@@ -1,6 +1,7 @@
 
 const ListingImages = {
-    A4122MunroeLane: require('../images/listing-A412-2 Munroe Lane.jpg')
+    A4122MunroeLane: require('../images/listing-A412-2 Munroe Lane.jpg'),
+    
 }
 
 export default ListingImages

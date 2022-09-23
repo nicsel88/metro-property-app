@@ -6,12 +6,12 @@ import Footer from '../../components/LandingComponents/Footer/FooterMain.jsx'
 import SearchFilterSort from '../../components/ResultsComponents/SearchFilterSort'
 import PropertyCard from '../../components/ResultsComponents/PropertyCard'
 
-const Results = ({ filter, setFilter, handleChange, handleSearch, Listings, Listing }) => {
+const Results = ({ filter, setFilter, handleChange, handleSearch, Listings, handleSort }) => {
   return (
     <div className={styles.wrapper}>
       <div>
         <Header />
-        <SearchFilterSort filter={filter} setFilter={setFilter} handleChange={handleChange} handleSearch={handleSearch} Listings={Listings}/>
+        <SearchFilterSort filter={filter} setFilter={setFilter} handleChange={handleChange} handleSearch={handleSearch} handleSort={handleSort} Listings={Listings}/>
         
         {Listings?.length > 0 ? (
             Listings.map((Listing) => (

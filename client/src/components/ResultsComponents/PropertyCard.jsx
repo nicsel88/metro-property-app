@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styles from './PropertyCard.module.css'
 import { useState } from 'react'
 import TestListing from '../../images/listing-A412-2 Munroe Lane.jpg'
@@ -17,6 +18,8 @@ import ListingImages from '../../api/index'
 const PropertyCard = ({ Listing }) => {
 
 var propertyImage = '../images/listing-' + Listing.street_address + '.jpg';
+
+var googleMapLink = 'http://maps.google.com/?q=' + Listing.street_address + ', ' + Listing.suburb;
   
   return (
   <>
@@ -25,7 +28,10 @@ var propertyImage = '../images/listing-' + Listing.street_address + '.jpg';
       <div className={styles.ListingImage}><img src={propertyImage} alt={propertyImage} /></div>
       <div className={styles.MapIconAddressContainer}>
         <img src={MapIcon} alt='map icon' />
-        <p>{Listing.street_address}, {Listing.suburb}</p>
+        <a className={styles.ListingAddress} style={{
+                    background: "#3A3B3B",
+                    color: "white"
+                  }} href={googleMapLink}>{Listing.street_address}, {Listing.suburb}</a>
       </div>
     </div>
     <div className={styles.InfoAndApplyContainer}>
@@ -55,7 +61,7 @@ var propertyImage = '../images/listing-' + Listing.street_address + '.jpg';
       <div className={styles.SaveEnquireApplyContainer}>
         <button className={styles.SaveEnquireApplyButton}>Save</button>
         <button className={styles.SaveEnquireApplyButton}>Enquire</button>
-        <button className={styles.ApplyButton}>Apply</button>
+        <Link to={"/apply"} style={{ color: '#FFF' }} className={styles.ApplyButton}>Apply</Link>
       </div>
     </div>
   </div>
