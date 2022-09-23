@@ -23,7 +23,29 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { AuthProvider } from './context/AuthContext';
 import './App.css';
 
+// QUICKSORT:
 
+// for/if/else compares the listing's rent component, but pushes the entire listing object inside the Listings array.
+// In this case, arr is the Listings array of Listing objects.
+// Function keeps running until sort is complete.
+
+function quickSortByRent(arr){
+
+    if(arr.length <2){        
+        return arr       
+    }        
+    let pivot = arr[arr.length-1]        
+    let left = []        
+    let right = []       
+    for(let i=0; i<arr.length-1; i++){       
+        if(arr[i].rent<pivot.rent){        
+            left.push(arr[i])        
+        } else{        
+            right.push(arr[i])        
+        }
+    }
+    return[...quickSortByRent(left),pivot,...quickSortByRent(right)]
+}
 
 
 const api = axios.create({
@@ -64,14 +86,11 @@ function App() {
         
       }
 
-// // Quick sort
-//       const quickSortByRent = Listings => {
+// Quick sort
 
-//       }
-
-//       const handleSort = (e) => {        
-//         setListings(quickSortByRent(Listings)); // 'Name' is the name of variable.       
-//       }
+      const handleSort = (e) => {   
+        setListings(quickSortByRent(Listings)); // 'Name' is the name of variable.      
+      }
       
 
     return (
@@ -85,7 +104,7 @@ function App() {
                         <Route exact path="/login" element={<><HeaderMain /><Login /></>} />
                         <Route exact path="/apply" element={<><HeaderMain /><Apply /></>} />
                         <Route exact path="/enquire" element={<><HeaderMain /><Enquire /></>} />
-                        <Route path='/listings' element={ <Results filter={filter} setFilter={setFilter} handleChange={handleChange} handleSearch={handleSearch} Listings={Listings}/> } />
+                        <Route path='/listings' element={ <Results filter={filter} setFilter={setFilter} handleChange={handleChange} handleSearch={handleSearch} handleSort={handleSort} Listings={Listings}/> } />
               </Routes>
               </AuthProvider>
           </BrowserRouter>
