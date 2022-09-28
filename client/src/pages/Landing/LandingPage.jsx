@@ -1,4 +1,6 @@
 import React from "react"; 
+
+import {Link} from 'react-router-dom';
 import './LandingPageStyle.css';
 import FooterMain from "../../components/LandingComponents/Footer/FooterMain";
 import HeaderMain from "../../components/LandingComponents/Header/HeaderMain";
@@ -13,7 +15,11 @@ import Bedroom1 from './filterComp/Bedroom1.js';
 import Bedroom2 from './filterComp/Bedroom2.js'
 import amenities from './Images/amenities.png'
 
-function LandingPage() {
+
+
+
+function LandingPage({handleChange,handleSearch}) {
+
 
   return (
     <div>
@@ -28,13 +34,15 @@ function LandingPage() {
             <div className='container-searchbox' >
 
               <label for="location" ><p className='location-title'>Location</p></label>
-              <input className='loc-search'type="text" name='location'required/>
+              <input className='loc-search' onChange={handleChange}type="text" name='keyword1'required/>
               
             
               <label for="district"><p className='district-title'>District</p></label>
-              <input className='district-search' type="text"  name='district' required/> 
-              <button type="search" className="search-btn">Search</button>  
-
+              <input className='district-search'onChange={handleChange} type="text"  name='keyword2'/> 
+            
+            
+              <Link to={"/listings"} className="search-btn" onClick={handleSearch} >Search</Link>
+             
               <div><Dropdown/></div>
               <div><RentDD/></div>
               <div><Bedroom1/></div>

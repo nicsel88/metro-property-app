@@ -18,6 +18,9 @@ const Listing = new Schema(
         pets_ok: { type: Boolean },
         sharehouse: { type: Boolean }, 
         number_of_flatmates: { type: Number },
+    },
+    {
+        collection:"PropertyListing"
     }
 )
 

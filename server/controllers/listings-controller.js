@@ -8,19 +8,19 @@ const Listing = require('../models/listings-model')
 // Also req.sort for sorting functionality.
 
 //SEARCH FUNCTION:
-// getListingsbyLocation = async (req, res) => {
-//     await Listing.find({}, (err, listing) => {
-//         if (err) {
-//             return res.status(400).json({ success: false, error: err })
-//         }
-//         if (!listing.length) {
-//             return res
-//                 .status(404)
-//                 .json({ success: false, error: `Listing not found` })
-//         }
-//         return res.status(200).json({ success: true, data: listing })
-//     }).catch(err => console.log(err))
-// }
+getListings = async (req, res) => {
+    await Listing.find({}, (err, listing) => {
+        if (err) {
+            return res.status(400).json({ success: false, error: err })
+        }
+        if (!listing.length) {
+            return res
+                .status(404)
+                .json({ success: false, error: `Listing not found` })
+        }
+        return res.status(200).json({ success: true, data: listing })
+    }).catch(err => console.log(err))
+}
 
 
 // FILTER:
@@ -35,47 +35,62 @@ getListingsByFilter = async (req, res) => {
         })
     }
 
-    if (req.body.rentMin == "Any") {
-        req.body.rentMin = 0
-    }
+    // if (req.body.rentMin == "Any") {
+    //     req.body.rentMin = 0
+    // }
 
-    if (req.body.bedroomsMin == "Any") {
-        req.body.bedroomsMin = 0
-    }
+    // if (req.body.bedroomsMin == "Any") {
+    //     req.body.bedroomsMin = 0
+    // }
 
-    if (req.body.bathroomsMin == "Any") {
-        req.body.bathroomsMin = 0
-    }
+    // if (req.body.bathroomsMin == "Any") {
+    //     req.body.bathroomsMin = 0
+    // }
 
-    if (req.body.carparksMin == "Any") {
-        req.body.carparksMin = 0
-    }
+    // if (req.body.carparksMin == "Any") {
+    //     req.body.carparksMin = 0
+    // }
 
-    if (req.body.rentMax == "Any") {
-        req.body.rentMax = Infinity
-    }
+    // if (req.body.rentMax == "Any") {
+    //     req.body.rentMax = Infinity
+    // }
 
-    if (req.body.bedroomsMax == "Any") {
-        req.body.bedroomsMax = Infinity
-    }
+    // if (req.body.bedroomsMax == "Any") {
+    //     req.body.bedroomsMax = Infinity
+    // }
 
-    if (req.body.bathroomsMax == "Any") {
-        req.body.bathroomsMax = Infinity
-    }
+    // if (req.body.bathroomsMax == "Any") {
+    //     req.body.bathroomsMax = Infinity
+    // }
 
-    if (req.body.carparksMax == "Any") {
-        req.body.carparksMax = Infinity
-    }
+    // if (req.body.carparksMax == "Any") {
+    //     req.body.carparksMax = Infinity
+    // }
 
 
-    if (req.body.propertyType.length == 0) {
-        req.body.propertyType = ["All", "House", "Townhouse", "Apartment", "Unit"]
-    }
+    // if (req.body.propertyType.length == 0) {
+    //     req.body.propertyType = ["All", "House", "Townhouse", "Apartment", "Unit"]
+    // }
 
     // if (req.body.amenities.length == 0) {
     //     req.body.amenities = [""]
     // }
-    
+    const arr=[
+        // {rent: { $gte: req.body.rentMin, $lte: req.body.rentMax}},
+        // {bedrooms: { $gte: req.body.bedroomsMin, $lte: req.body.bedroomsMax}},
+        // {bathrooms: { $gte: req.body.bathroomsMin, $lte: req.body.bathroomsMax}},
+        // {car_parks: { $gte: req.body.carparksMin, $lte: req.body.carparksMax}},
+        // {region: { $regex: req.body.region }},
+        // {district: { $regex: req.body.district }},
+        // {suburb: {$regex: req.body.suburb}},
+        // // {amenities: { $all: req.body.amenities }},
+        // {property_type: { $in: req.body.propertyType }},
+        // {pets_ok: { $eq: req.body.petsOk }},
+        ...(req.body.pets_ok ? [{  $eq: req.body.petsOk}] : [{}]),
+        // {suburb: { $regex: req.body.keyword}},
+        {suburb: { $regex: req.body.keyword1}},
+        {district: { $regex: req.body.keyword2}},
+    ]
 
     console.log(body);
 
@@ -85,23 +100,11 @@ getListingsByFilter = async (req, res) => {
     // Using $regex (instead of $in) to solve the problem of error when none is selected (i.e. user wants to search 'All Suburbs'). regex checks if the dropdown option string is contained within the equivalent string in the database listing.
 
     await Listing.find({
-        $and: [
-            {rent: { $gte: req.body.rentMin, $lte: req.body.rentMax}},
-            {bedrooms: { $gte: req.body.bedroomsMin, $lte: req.body.bedroomsMax}},
-            {bathrooms: { $gte: req.body.bathroomsMin, $lte: req.body.bathroomsMax}},
-            {car_parks: { $gte: req.body.carparksMin, $lte: req.body.carparksMax}},
-            {region: { $regex: req.body.region }},
-            {district: { $regex: req.body.district }},
-            {suburb: {$regex: req.body.suburb}},
-            // {amenities: { $all: req.body.amenities }},
-            {property_type: { $in: req.body.propertyType }},
-            {pets_ok: { $eq: req.body.petsOk }},
-            {suburb: { $regex: req.body.keyword}},
-        ]   
+        $and:arr    
     
     }, (err, listings) => {
 
-
+console.log(err,listings)
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
@@ -263,7 +266,7 @@ module.exports = {
     // createListing,
     // updateListing,
     // deleteListing,
-    // getListings,
+    getListings,
     // getListingById,
     getListingsByFilter,
 }

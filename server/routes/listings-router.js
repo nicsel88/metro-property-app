@@ -8,7 +8,7 @@ const router = express.Router()
 // router.put('/listing/:id', ListingController.updateListing)
 // router.delete('/listing/:id', ListingController.deleteListing)
 // router.get('/listing/:id', ListingController.getListingById)
-// router.get('/listings', ListingController.getListings)
+router.get('/listings', ListingController.getListings)
 router.post('/listing/filter', ListingController.getListingsByFilter)
 
 // Colon is used for a variable (in this case, 'id')

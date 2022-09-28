@@ -64,23 +64,22 @@ function App() {
         
       }
 
-// // Quick sort
-//       const quickSortByRent = Listings => {
+      const handleSearch2 = (e) => {
+        console.log(filter);
+        setListings(getListingsByFilter({keyword1:filter.keyword1, keyword2:filter.keyword2})); // 'Name' is the name of variable.
+        console.log(Listings);
+        
+      }
 
-//       }
-
-//       const handleSort = (e) => {        
-//         setListings(quickSortByRent(Listings)); // 'Name' is the name of variable.       
-//       }
       
-
+console.log({filter});
     return (
       <React.Fragment>
           <BrowserRouter>
             <AuthProvider>
               {/* <NavBar/> */}
               <Routes>
-                        <Route exact path="/" element={<><LandingPage /></>}/>
+                        <Route exact path="/" element={<><LandingPage filter={filter} setFilter={setFilter} handleChange={handleChange} handleSearch={handleSearch2} Listing={Listings} /></>}/>
                         <Route exact path="/signup" element={<><HeaderMain /><SignUp /></>} />
                         <Route exact path="/login" element={<><HeaderMain /><Login /></>} />
                         <Route exact path="/apply" element={<><HeaderMain /><Apply /></>} />

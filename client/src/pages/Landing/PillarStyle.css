@@ -11,17 +11,31 @@
     background: #4C4A4A;
     border-radius: 20px;
 }
-.pillar-img1,.pillar-img2,.pillar-img3,.pillar-img4{
+.pillar-img1,.pillar-img2,.pillar-img3{
     display: flex;
     margin-top: 45px;
     margin-left: 50px;   
 }
-.PMA-text,.changenz-text,.Tent-App-Text,.Olisting-text{
+.pillar-img4{
+    display: flex;
+    margin-top: 75px;
+    margin-left: 50px;   
+}
+.changenz-text,.Tent-App-Text,.Olisting-text{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 23px;
+    font-size: 22px;
     line-height: 39px;
     text-align: center;
     color: #FFFFFF;
+}
+.PMA-text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 39px;
+    text-align: center;
+    color: #FFFFFF;  
 }

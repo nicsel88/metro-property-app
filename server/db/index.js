@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 
 // Difference services are discoverable at a host name identical to the container name --> change from local host to 'mongo'
 mongoose
-.connect('mongodb://127.0.0.1:27017/listings', { useNewUrlParser: true })
+.connect('mongodb://127.0.0.1:27017/Listing', { useNewUrlParser: true })
 .catch(e => {
     console.error('Connection error', e.message)
 })
-
+// const db = mongoose.connection
 // mongoose
-// .connect('mongodb://mongo:27017/listings', { useNewUrlParser: true })
+// .connect('mongodb://mongo:27017/Listing', { useNewUrlParser: true })
 // .catch(e => {
 //     console.error('Connection error', e.message)
 // })
